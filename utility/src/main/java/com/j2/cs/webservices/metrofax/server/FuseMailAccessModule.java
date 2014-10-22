@@ -13,11 +13,24 @@ import com.j2.cs.webservices.metrofax.shared.exception.ElectricMailException;
 
 public class FuseMailAccessModule {
 	private final FusemailProxy fp = new FusemailProxy();
-	private static final String FUSEMAIL_MAILBOX_DOMAIN_INBOUND = "@messages.efax.com";
-	private static final String FUSEMAIL_MAILBOX_DOMAIN_OUTBOUND = "@send.messages.efax.com";
-	private static final String INBOUND_HEADER_NAME = "Message-ID";
-	private static final String OUTBOUND_HEADER_NAME = "X-J2Id";
+	private static String FUSEMAIL_MAILBOX_DOMAIN_INBOUND;// = "@messages.efax.com";
+	private static String FUSEMAIL_MAILBOX_DOMAIN_OUTBOUND;// = "@send.messages.efax.com";
+	private static String INBOUND_HEADER_NAME;// = "Message-ID";
+	private static String OUTBOUND_HEADER_NAME;// = "X-J2Id";
 	private final Gson gson;
+	
+	public static void init(String inboundDomain, String outboundDomain, 
+			String inboundHeader, String outboundHeader){
+		
+		FUSEMAIL_MAILBOX_DOMAIN_INBOUND = inboundDomain;
+		FUSEMAIL_MAILBOX_DOMAIN_OUTBOUND = outboundDomain;
+		INBOUND_HEADER_NAME = inboundHeader;
+		OUTBOUND_HEADER_NAME = outboundHeader;
+		
+		System.out.println("Initialized Fusemail Access Module");
+		
+	}
+	
 	public FuseMailAccessModule(){
 		GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(Long.class, new JsonLongTypeAdapter()).

@@ -10,6 +10,12 @@
     <servlet-name>utilityServlet</servlet-name>
     <servlet-class>com.j2.cs.webservices.metrofax.server.UtilityServiceImpl</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>com.j2.cs.webservices.metrofax.server.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>utilityServlet</servlet-name>
