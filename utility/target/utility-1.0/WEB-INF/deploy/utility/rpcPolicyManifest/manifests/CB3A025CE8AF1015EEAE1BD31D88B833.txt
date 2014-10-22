@@ -1,0 +1,2 @@
+serviceClass: com.j2.cs.webservices.metrofax.client.UtilityService
+path: CB3F11D748C1FB5D442EFB2189AD8C0E.gwt.rpc

@@ -1,0 +1,51 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	/* Add CSS here. See the GWT docs on UI Binder for more details */
+	.important {
+		color: orangered;
+		font-weight: bold;
+	}
+	.trackingNumber {
+		border: 1px solid Black;
+	}
+	.dialogbox {
+		font-weight: bold;
+	}
+	.backgroundColor {
+		background-color: lavender;
+	}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.backgroundColor}">
+		<g:VerticalPanel width="368px" height="137px" ui:field="verticalPanel" styleName="{style.trackingNumber}">
+			<g:Cell horizontalAlignment="ALIGN_CENTER">
+				<g:Label text="Tracking Number Decoding" styleName="{style.dialogbox}" width="326px"/>
+			</g:Cell>
+			<g:HorizontalPanel width="355px" height="32px">
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:LongBox text="" ui:field="trackingNumberField" styleName="textBoxBorder"/>
+				</g:Cell>
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:Button ui:field="button">Decode</g:Button>
+				</g:Cell>
+			</g:HorizontalPanel>
+			<g:HorizontalPanel width="358px" height="28px">
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:Label text="ServiceKey:" width="249px"/>
+				</g:Cell>
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:TextBox height="15px" width="90px" ui:field="serviceKeyField" styleName="textBoxBorder"/>
+				</g:Cell>
+			</g:HorizontalPanel>
+			<g:HorizontalPanel height="28px" width="359px">
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:Label text="Transaction ID:" width="256px"/>
+				</g:Cell>
+				<g:Cell horizontalAlignment="ALIGN_CENTER">
+					<g:TextBox height="15px" width="90px" ui:field="transactionIdField" styleName="textBoxBorder"/>
+				</g:Cell>
+			</g:HorizontalPanel>
+		</g:VerticalPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
